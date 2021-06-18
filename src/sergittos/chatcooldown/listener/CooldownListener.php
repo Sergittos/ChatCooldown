@@ -9,14 +9,16 @@ namespace sergittos\chatcooldown\listener;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\utils\TextFormat;
-use sergittos\chatcooldown\utils\CooldownUtils;
+use sergittos\chatcooldown\session\SessionFactory;
 
 class CooldownListener implements Listener {
 
     public function onChat(PlayerChatEvent $event): void {
-        if(!CooldownUtils::canChat()) {
+        $player = $event->getPlayer();
+        $session = SessionFactory::getSession($player);
+        if(!$session->canChat()) {
             $event->setCancelled(true);
-            $event->getPlayer()->sendMessage(TextFormat::RED . CooldownUtils::$cooldown . " seconds have not passed yet!");
+            $player->sendMessage(TextFormat::RED . $session->getCooldown() . " seconds have not passed yet!");
         }
     }
 }

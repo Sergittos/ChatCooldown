@@ -9,7 +9,7 @@ namespace sergittos\chatcooldown\form;
 use EasyUI\variant\ModalForm;
 use pocketmine\Player;
 use pocketmine\utils\TextFormat;
-use sergittos\chatcooldown\utils\CooldownUtils;
+use sergittos\chatcooldown\session\SessionFactory;
 
 class RemoveCooldownForm extends ModalForm {
 
@@ -18,10 +18,11 @@ class RemoveCooldownForm extends ModalForm {
     }
 
     protected function onAccept(Player $player): void {
-        if(!CooldownUtils::hasCooldown()) {
+        $session = SessionFactory::getSession($player);
+        if(!$session->hasCooldown()) {
             $player->sendMessage(TextFormat::RED . "You cannot remove the cooldown because there is not any cooldown!");
         } else {
-            CooldownUtils::setCooldown(-1);
+            $session->setCooldown(-1);
             $player->sendMessage(TextFormat::GREEN . "You have removed the cooldown correctly");
         }
     }
