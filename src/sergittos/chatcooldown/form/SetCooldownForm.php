@@ -24,7 +24,7 @@ class SetCooldownForm extends CustomForm {
     }
 
     protected function onSubmit(Player $player, FormResponse $response): void {
-        $time = $response->getInputSubmittedText("time");
+        $time = intval($response->getInputSubmittedText("time"));
 
         SessionFactory::getSession($player)->setCooldown($time);
         $player->sendMessage(TextFormat::GREEN . "You have set the cooldown to $time seconds!");

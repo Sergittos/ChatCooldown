@@ -18,8 +18,8 @@ class ChatCooldown extends PluginBase {
     use SingletonTrait;
 
     public function onLoad() {
-        $this->saveResource("cooldowns");
         self::setInstance($this);
+        $this->saveDefaultConfig();
     }
 
     public function onEnable(): void {

@@ -41,7 +41,7 @@ class Session {
     }
 
     public function hasCooldown(): bool {
-        return $this->getCooldown() !== 0;
+        return $this->getCooldown() !== -1;
     }
 
     public function canChat(): bool {
@@ -53,7 +53,7 @@ class Session {
     }
 
     public function getCooldownConfig(): Config {
-        return new Config(ChatCooldown::getInstance()->getDataFolder() . "cooldowns.yml", Config::YAML);
+        return ChatCooldown::getInstance()->getConfig();
     }
 
     public function message(string $text): void {
