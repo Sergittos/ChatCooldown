@@ -5,4 +5,5 @@ branches:
 projects:
   ChatCooldown:
     path: ""
+    icon: icon.png
 ...
