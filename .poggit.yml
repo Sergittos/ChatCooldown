@@ -7,6 +7,6 @@ projects:
     path: ""
     icon: icon.png
     libs:
-      - src: GiantQuartz/EasyUI/libEasyUI
+      - src: andresbytes/EasyUI/libEasyUI
         version: 1.0.0
 ...
