@@ -6,4 +6,7 @@ projects:
   ChatCooldown:
     path: ""
     icon: icon.png
+    libs:
+      - src: GiantQuartz/EasyUI/libEasyUI
+        version: 1.0.0
 ...
