@@ -8,9 +8,11 @@ namespace sergittos\chatcooldown;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\command\PluginIdentifiableCommand;
 use pocketmine\Player;
+use pocketmine\plugin\Plugin;
 
-class CooldownCommand extends Command {
+class CooldownCommand extends Command implements PluginIdentifiableCommand {
 
     public function __construct() {
         $this->setPermission("command.cooldown");
@@ -22,4 +24,10 @@ class CooldownCommand extends Command {
             $sender->sendForm(new CooldownForm());
         }
     }
+
+    /** @noinspection PhpIncompatibleReturnTypeInspection */
+    public function getPlugin(): Plugin {
+        return ChatCooldown::getInstance();
+    }
+
 }
