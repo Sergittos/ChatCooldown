@@ -1,2 +1,2 @@
-# The cooldown of the chat
-cooldown: -1
+## Players will have to wait this amount of seconds before being able to chat again
+cooldown: 3

@@ -7,8 +7,7 @@ namespace sergittos\chatcooldown\session;
 
 
 use pocketmine\Player;
-use pocketmine\utils\Config;
-use sergittos\chatcooldown\ChatCooldown;
+use sergittos\chatcooldown\CooldownUtils;
 
 class Session {
 
@@ -26,34 +25,20 @@ class Session {
         return $this->player;
     }
 
-    public function setCooldown($cooldown): void {
-        $config = $this->getCooldownConfig();
-        $config->set("cooldown", $cooldown);
-        $config->save();
-    }
-
-    public function getLastChatTime(): int {
-        return $this->last_chat_time;
-    }
-
-    public function getCooldown() {
-        return $this->getCooldownConfig()->get("cooldown");
-    }
-
-    public function hasCooldown(): bool {
-        return $this->getCooldown() !== -1;
-    }
-
     public function canChat(): bool {
-        if(time() - $this->last_chat_time > $this->getCooldownConfig()->get("cooldown")) {
+        if($this->getTimeElapsed() >= CooldownUtils::getCooldown()) {
             $this->last_chat_time = time();
             return true;
         }
         return false;
     }
 
-    public function getCooldownConfig(): Config {
-        return ChatCooldown::getInstance()->getConfig();
+    public function getTimeRemaining(): int {
+        return CooldownUtils::getCooldown() - $this->getTimeElapsed();
+    }
+
+    private function getTimeElapsed(): int {
+        return time() - $this->last_chat_time;
     }
 
     public function message(string $text): void {

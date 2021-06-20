@@ -1,10 +1,10 @@
 Download the plugin on poggit: [![Poggit](https://poggit.pmmp.io/shield.state/ChatCooldown)](https://poggit.pmmp.io/p/ChatCooldown) <br>
 
 # ChatCooldown
-⏰ A simple Chat Cooldown plugin for pocketmine servers.
+⏰ A simple chat cooldown plugin for pocketmine servers.
 
 ## Functionality
-- Only the administrators can modify the cooldowns with **/cooldown** (default: *cooldown.command*)
+- Only the administrators can update the cooldown with **/cooldown** (default permission: *command.cooldown*)
 - This command will open a form where you can set a cooldown or remove the cooldown.
 
 ## Virions Used
