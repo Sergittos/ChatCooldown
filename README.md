@@ -12,7 +12,5 @@ Download the plugin on poggit: [![Poggit](https://poggit.pmmp.io/shield.state/Ch
 
 ## Pictures
 
-![Options](https://i.imgur.com/W26dhUm.png) <br>
-![Set Cooldown](https://i.imgur.com/4eRSmSW.png) <br>
-![Remove Cooldown](https://i.imgur.com/HW1BH4I.png)
+![Options](https://i.imgur.com/L9N0jAQ.png)
 
