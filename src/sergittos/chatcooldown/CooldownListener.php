@@ -16,8 +16,9 @@ class CooldownListener implements Listener {
     public function onChat(PlayerChatEvent $event): void {
         $session = SessionFactory::getSession($event->getPlayer());
         if(!$session->canChat()) {
-            $session->message(TextFormat::RED . $session->getTimeRemaining() . " seconds have not passed yet!");
+            $session->message(TextFormat::RED . str_replace("(time)", (string) $session->getTimeRemaining(), ChatCooldown::getInstance()->getConfig()->get("cooldown-message")));
             $event->setCancelled(true);
         }
     }
+
 }

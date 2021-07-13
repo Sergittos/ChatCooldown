@@ -15,7 +15,7 @@ use pocketmine\plugin\Plugin;
 class CooldownCommand extends Command implements PluginIdentifiableCommand {
 
     public function __construct() {
-        $this->setPermission("chatcooldown.command");
+        $this->setPermission("chatcooldown.admin");
         parent::__construct("cooldown", "Update the chat cooldown");
     }
 

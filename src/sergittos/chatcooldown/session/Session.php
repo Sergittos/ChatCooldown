@@ -26,6 +26,9 @@ class Session {
     }
 
     public function canChat(): bool {
+        if($this->player->hasPermission("chatcooldown.bypass")) {
+            return true;
+        }
         if($this->getTimeElapsed() >= CooldownUtils::getCooldown()) {
             $this->last_chat_time = time();
             return true;
