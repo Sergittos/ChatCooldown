@@ -11,10 +11,10 @@ use pocketmine\utils\Config;
 class CooldownUtils {
 
     /** @var int */
-    static private $cooldown;
+    static private int $cooldown;
 
     /** @var Config */
-    static private $config;
+    static private Config $config;
 
     static public function init(): void {
         /** @var ChatCooldown $plugin */

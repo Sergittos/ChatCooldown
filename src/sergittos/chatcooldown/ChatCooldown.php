@@ -14,12 +14,12 @@ use sergittos\chatcooldown\session\SessionListener;
 class ChatCooldown extends PluginBase {
     use SingletonTrait;
 
-    public function onLoad() {
+    protected function onLoad(): void {
         self::setInstance($this);
         $this->saveDefaultConfig();
     }
 
-    public function onEnable(): void {
+    protected function onEnable(): void {
         CooldownUtils::init();
 
         $this->registerEvents(new CooldownListener());
@@ -28,7 +28,7 @@ class ChatCooldown extends PluginBase {
         $this->getServer()->getCommandMap()->register("chatcooldown", new CooldownCommand());
     }
 
-    public function onDisable() {
+    protected function onDisable(): void {
         CooldownUtils::save();
     }
 

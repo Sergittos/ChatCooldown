@@ -6,16 +6,16 @@ declare(strict_types=1);
 namespace sergittos\chatcooldown\session;
 
 
-use pocketmine\Player;
+use pocketmine\player\Player;
 use sergittos\chatcooldown\CooldownUtils;
 
 class Session {
 
     /** @var Player */
-    private $player;
+    private Player $player;
 
     /** @var int */
-    private $last_chat_time = 0;
+    private int $last_chat_time = 0;
 
     public function __construct(Player $player) {
         $this->player = $player;

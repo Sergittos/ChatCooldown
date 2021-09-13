@@ -9,7 +9,7 @@ namespace sergittos\chatcooldown;
 use EasyUI\element\Input;
 use EasyUI\utils\FormResponse;
 use EasyUI\variant\CustomForm;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 
 class CooldownForm extends CustomForm {

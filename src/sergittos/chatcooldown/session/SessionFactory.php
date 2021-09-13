@@ -6,12 +6,13 @@ declare(strict_types=1);
 namespace sergittos\chatcooldown\session;
 
 
-use pocketmine\Player;
+
+use pocketmine\player\Player;
 
 class SessionFactory {
 
     /** @var Session[] */
-    static private $sessions = [];
+    static private array $sessions = [];
 
     static public function getSession(Player $player): ?Session {
         return self::$sessions[$player->getName()] ?? null;

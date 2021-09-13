@@ -1,6 +1,12 @@
 main: sergittos\chatcooldown\ChatCooldown
 name: ChatCooldown
-api: 3.0.0
+api: 4.0.0
 version: 1.0.1
 author: Sergittos (@Sergittos)
 website: https://github.com/Sergittos
+
+permissions:
+  chatcooldown.admin:
+    default: op
+  chatcooldown.bypass:
+    default: op

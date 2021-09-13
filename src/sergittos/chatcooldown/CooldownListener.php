@@ -17,7 +17,7 @@ class CooldownListener implements Listener {
         $session = SessionFactory::getSession($event->getPlayer());
         if(!$session->canChat()) {
             $session->message(TextFormat::RED . str_replace("(time)", (string) $session->getTimeRemaining(), ChatCooldown::getInstance()->getConfig()->get("cooldown-message")));
-            $event->setCancelled(true);
+            $event->cancel();
         }
     }
 
