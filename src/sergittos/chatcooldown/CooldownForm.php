@@ -11,6 +11,7 @@ use EasyUI\utils\FormResponse;
 use EasyUI\variant\CustomForm;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
+use sergittos\chatcooldown\utils\CooldownUtils;
 
 class CooldownForm extends CustomForm {
 

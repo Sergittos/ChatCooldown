@@ -3,12 +3,13 @@
 declare(strict_types=1);
 
 
-namespace sergittos\chatcooldown\session;
+namespace sergittos\chatcooldown\listener;
 
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerLoginEvent;
 use pocketmine\event\player\PlayerQuitEvent;
+use sergittos\chatcooldown\session\SessionFactory;
 
 class SessionListener implements Listener {
 

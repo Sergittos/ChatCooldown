@@ -3,18 +3,16 @@
 declare(strict_types=1);
 
 
-namespace sergittos\chatcooldown;
+namespace sergittos\chatcooldown\utils;
 
 
 use pocketmine\utils\Config;
+use sergittos\chatcooldown\ChatCooldown;
 
 class CooldownUtils {
 
-    /** @var int */
-    static private int $cooldown;
-
-    /** @var Config */
     static private Config $config;
+    static private int $cooldown;
 
     static public function init(): void {
         /** @var ChatCooldown $plugin */

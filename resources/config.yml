@@ -3,4 +3,4 @@ cooldown: 3
 
 ## The message that will be appear when the amount the seconds that have to wait the player have not passed
 ## Use (time) to put the amount of seconds that have to wait the player to chat again
-cooldown-message: "You must wait (time) seconds to chat again!"
+cooldown-message: "{RED}You must wait (time) seconds to chat again!"

@@ -9,7 +9,9 @@ namespace sergittos\chatcooldown;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\SingletonTrait;
-use sergittos\chatcooldown\session\SessionListener;
+use sergittos\chatcooldown\listener\CooldownListener;
+use sergittos\chatcooldown\listener\SessionListener;
+use sergittos\chatcooldown\utils\CooldownUtils;
 
 class ChatCooldown extends PluginBase {
     use SingletonTrait;

@@ -7,14 +7,12 @@ namespace sergittos\chatcooldown\session;
 
 
 use pocketmine\player\Player;
-use sergittos\chatcooldown\CooldownUtils;
+use sergittos\chatcooldown\utils\ColorUtils;
+use sergittos\chatcooldown\utils\CooldownUtils;
 
 class Session {
 
-    /** @var Player */
     private Player $player;
-
-    /** @var int */
     private int $last_chat_time = 0;
 
     public function __construct(Player $player) {
@@ -45,7 +43,7 @@ class Session {
     }
 
     public function message(string $text): void {
-        $this->player->sendMessage($text);
+        $this->player->sendMessage(ColorUtils::translate($text));
     }
 
 }
