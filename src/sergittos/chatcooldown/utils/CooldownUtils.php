@@ -15,10 +15,7 @@ class CooldownUtils {
     static private int $cooldown;
 
     static public function init(): void {
-        /** @var ChatCooldown $plugin */
-        $plugin = ChatCooldown::getInstance();
-
-        $config = $plugin->getConfig();
+        $config = ChatCooldown::getInstance()->getConfig();
 
         self::$config = $config;
         self::$cooldown = $config->get("cooldown");

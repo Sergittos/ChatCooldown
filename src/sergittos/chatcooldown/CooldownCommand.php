@@ -20,7 +20,7 @@ class CooldownCommand extends Command implements PluginOwned {
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args): void {
-        if($this->testPermission($sender) and $sender instanceof Player) {
+        if($sender instanceof Player) {
             $sender->sendForm(new CooldownForm());
         }
     }

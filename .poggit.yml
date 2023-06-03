@@ -7,6 +7,7 @@ projects:
     path: ""
     icon: icon.png
     libs:
-      - src: andresbytes/EasyUI/libEasyUI
-        version: 1.0.2
+      - src: dresnite/EasyUI/libEasyUI
+        version: 1.0.3
+        branch: pm5
 ...

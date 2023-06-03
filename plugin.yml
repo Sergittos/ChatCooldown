@@ -1,7 +1,7 @@
 main: sergittos\chatcooldown\ChatCooldown
 name: ChatCooldown
-api: 4.0.0
-version: 1.0.2
+api: 5.0.0
+version: 1.1.0
 author: Sergittos (@Sergittos)
 website: https://github.com/Sergittos
 
